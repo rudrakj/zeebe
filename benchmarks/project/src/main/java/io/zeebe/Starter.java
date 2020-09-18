@@ -110,7 +110,7 @@ public class Starter extends App {
   private ZeebeClient createZeebeClient() {
     final ZeebeClientBuilder builder =
         ZeebeClient.newClientBuilder()
-            .brokerContactPoint(appCfg.getBrokerUrl())
+            .gatewayAddress(appCfg.getBrokerUrl())
             .numJobWorkerExecutionThreads(0)
             .withProperties(System.getProperties())
             .withInterceptors(monitoringInterceptor);
